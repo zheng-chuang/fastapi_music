@@ -1,3 +1,4 @@
+import requests
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -5,5 +6,6 @@ app = FastAPI()
 
 @app.get('/')
 def hello_world():
-    return "Hello,World"
+    text = requests.get("https://zheng-chuang.synology.me").text
+    return text
 

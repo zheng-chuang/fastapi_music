@@ -6,6 +6,6 @@ app = FastAPI()
 
 @app.get('/')
 def hello_world():
-    text = requests.get("https://zheng-chuang.synology.me").text
-    return text
+    r = requests.get("https://zheng-chuang.synology.me")
+    return r.text
 
